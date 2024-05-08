@@ -1,0 +1,578 @@
+:root{
+    --primary-color: #2c3855;
+    --primary-color-dark: #435681;
+    --text-dark: #333333;
+    --text-light: #767268;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.quiz__header{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    color: var(--text-dark);
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.quiz__container{
+    width: 100%;
+    margin: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button__wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+}
+
+#create__btn{
+    background: none;
+    border: none;
+}
+
+#create__btn a{
+    padding: 0.7rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--text-dark);
+    background: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+#create__btn a:hover{
+    background-color: var(--primary-color-dark);
+    color: var(--white);
+}
+
+#start__btn{
+    padding: 0.7rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+#start__btn:hover{
+    background-color: var(--primary-color-dark);
+}
+
+#submit__btn{
+    padding: 0.7rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+#submit__btn:hover{
+    background-color: var(--primary-color-dark);
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.option input[type="radio"]{
+    margin-right: 5px;
+}
+
+.question{
+    margin-bottom: 20px;
+}
+
+.options{
+    margin-bottom: 20px;
+}
+
+ .q__text{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+.result__container{
+    max-width: var(--max-width);
+    padding: 1rem 1rem;
+    align-items: center; 
+}
+
+/* Quiz Creation Styles */
+
+.quizBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.quizCreationPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f3f4f6;
+    border: 1px solid #ccc;
+    padding: 40px 20px;
+    width: 50%;
+    margin-top: 40px;
+}
+
+#quizForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+}
+
+.quizCreationHeader{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    color: var(--text-dark);
+    text-align: center;
+    width: 100%;
+}
+
+.q__label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+#quizName{
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0.7rem;
+    width: 55%;
+    height: 50px;
+}
+
+#numberOfQuestions{
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0.7rem;
+    width: 70px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+#btn__CreateQuiz {
+    padding: 1rem 1.7rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: green;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+
+#btn__CreateQuiz:hover{
+    background-color: darkgreen;
+}
+
+/* Quiz Entry Styles */
+
+#quizContainer {
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+.quizName {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.quizTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.questionContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    margin-bottom: 25px;
+}
+
+.questionLabel {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.questionInput {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 50%;
+    height: 50px;
+    margin-bottom: 9px;
+}
+
+.answerLabel {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.answerInput {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 25%;
+    height: 50px;
+}
+
+.optionContainer {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.optionWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.optionLabel{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.optionInput {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 20%;
+    height: 50px;
+}
+
+.startBtn {
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: green;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+    width: 10em;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+
+.startBtn:hover{
+    background-color: darkgreen;
+}
+
+#submitBtn{
+    padding: 0.7rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+#submitBtn:hover{
+    background-color: var(--primary-color-dark);
+}
+
+.no__display{
+    display: none;
+}
+
+.returnLink {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.returnLink:hover{
+    color: var(--primary-color-dark);
+}
+
+.answerHeader{
+    font-size: 16px;
+    color: var(--text-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 30px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.correctAnswerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 8px;
+}
+
+.listItem{
+    color: var(--text-dark);
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+
+.question__num__wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.question__header__wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+}
+    
+.q__label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+#question__number{
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 70px;
+    height: 25px;
+    margin-top: 5px;
+}
+
+#question__header{
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 25%;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.userQuiz__header{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.question__entry__container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+#cr__next__btn {
+    padding: 0.7rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+
+#cr__next__btn:hover{
+    background-color: var(--primary-color-dark);
+}
+
+
+#user__question {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 50%;
+    height: 50px;
+}
+
+#user__answer {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 25%;
+    height: 50px;
+}
+
+.userQuestion__label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.userAnswer__label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.optionsContainer {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.option__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.option__label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.option__entry {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 20%;
+    height: 50px;
+}
+
+#user__start__btn {
+    padding: 0.9rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: green;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+    width: 25%;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+#user__start__btn:hover{
+    background-color: darkgreen;
+}
+
+
+.no__display {
+    display: none;
+}
+
+
+ */

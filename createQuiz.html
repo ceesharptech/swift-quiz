@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Quiz Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quizBox" id="quizBox">
+        <div id="quizCreationPage" class="quizCreationPage">
+            <h1 class="quizCreationHeader">Create Your Custom Quiz</h1><br>
+            <form id="quizForm">
+                <label for="quizName" class="q__label">Quiz Name:</label>
+                <input type="text" name="" id="quizName" required><br>
+                <label for="numberOfQuestions" class="q__label">Number of Questions:</label>
+                <input type="number" name="" id="numberOfQuestions" min="1" required>
+                <button type="submit" id="btn__createQuiz">Create Quiz</button>
+            </form>
+        </div>
+    </div>
+
+    <form id="quizContainer" style="display: none;">
+
+    </form>
+
+    <div class="customQuizContainer" id="customQuizContainer" style="display: none;">
+        <h2 class="quiz__header"></h2>
+        <div class="quiz__container">
+            <div class="quizName"><h2></h2></div>
+            <div class="question q__text">
+                <p></p>
+            </div>
+            <div class="options">
+    
+            </div>
+            <button id="submitBtn">Next</button> 
+        </div>
+    
+        <div id="quizFinishedMessage" style="display: none; text-align: center;">
+        </div>
+    </div>
+
+    <script src="quizCreate.js"></script>
+</body>
+</html>
